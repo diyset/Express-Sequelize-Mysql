@@ -21,13 +21,13 @@ StudentRepository.prototype = {
     },
     update: function(s, cb, errCb){
         let db = this.db;
-        let data = [s.nama, s.kelas, s.ipk];
-        let query = 'UPDATE student SET name = ?, kelas = ?, ipk = ?';
+        let data = [s.nama, s.kelas, s.ipk, s.nim];
+        let query = 'UPDATE student SET nama = ?, kelas = ?, ipk = ? WHERE nim = ?';
         db.query(query, data, (err, results)=>{
             if(err){
                 errCb(err);
             }
-            db(results);
+            cb(results);
         });
     },
     delete: function(nim, cb, errCb){
@@ -37,7 +37,7 @@ StudentRepository.prototype = {
             if(err){
                 errCb(err);
             }
-            db(results);
+            cb(results);
         });
     },
     findOne: function(nim, cb, errCb){
@@ -69,7 +69,7 @@ StudentRepository.prototype = {
                 let studentArray = [];
                 for(let i = 0;i<results.length; i++){
                     let s = results[i];
-                    let student = new Student(s.nim, s.name, s.kelas, s.ipk);
+                    let student = new Student(s.nim, s.nama, s.kelas, s.ipk);
                     studentArray.push(student);
                 } 
                 cb(studentArray);

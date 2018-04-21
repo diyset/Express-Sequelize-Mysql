@@ -56,7 +56,7 @@ let updateStudentShowForm = (req, res, next)=>{
 };
 
 let deleteStudent = (req, res, next)=>{
-    let nim = req.params.nim
+    let nim = req.params.nim;
     if(!nim){
         next(nim+' Nim Tidak Ditemukan');
     }

@@ -18,6 +18,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', studentController.getAllStudents);
+app.get('/student_detail/:nim', studentController.getStudent);
+
+app.get('/new_student',studentController.saveStudentShowForm);
+app.post('/save_student',studentController.saveStudent);
+
+app.get('/update_student/:nim',studentController.updateStudentShowForm);
+app.post('/update_student',studentController.updateStudent);
+
+app.get('/delete_student/:nim', studentController.deleteStudent);
 
 
 // catch 404 and forward to error handler
