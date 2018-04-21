@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+div 
+  tabel(border='1')
+    thead
+      th NIM
+      th NAMA
+      th KELAS
+      th IPK
+      th ACTION
+    tbody
+      each s in students
+        tr
+          td #{s.nim}
+          td #{s.nama}
+          td #{s.kelas}
+          td #{s.ipk}
+          td #[a(href='/student_detail/'+s.nim) Detail] | #[a(href='/edit_student/'+s.nim) EDIT] | #[a(href='/delete_student/'+s.nim) DELETE]
+          h1 Dian Setiyadi
