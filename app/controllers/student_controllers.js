@@ -95,7 +95,7 @@ let getAllStudents = (req, res, next)=>{
     let studentRepo = new StudentRepo(db);
     
     studentRepo.findAll(results=>{
-        res.render('index',{'students':results,'title':'Get All Students'});
+        res.render('inquirystudents',{'students':results,'title':'Get All Students'});
     }, err=>{
         if(err){
             next(err);
