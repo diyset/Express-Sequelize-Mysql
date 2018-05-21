@@ -35,10 +35,14 @@ app.use(flash());
 app.get('/', memberController.index);
 app.get('/index_login', memberController.index_login);
 
+app.get('/signup_form', memberController.signupForm);
+app.post('/signup', memberController.signup);
+
 app.get('/login',memberController.login);
 app.post('/login', passport.auth());
-app.get('/profile', ensure.ensureLoggedIn() ,memberController.myProfile);
 app.get('/logout', memberController.logout);
+
+app.get('/profile', ensure.ensureLoggedIn() ,memberController.myProfile);
 
 app.get('/inquirystudents', studentController.getAllStudents);
 app.get('/student_detail/:nim', studentController.getStudent);

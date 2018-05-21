@@ -16,7 +16,7 @@ let saveStudent = (req, res, next)=>{
     let student = new Student(data.nim, data.nama, data.kelas, parseFloat(data.ipk));
     let studentRepo = new StudentRepo(db);
     studentRepo.save(student, result=>{
-        res.redirect('/');
+        res.redirect('/index_login');
     }, err=>{
         if(err){
             next(err);
@@ -32,7 +32,7 @@ let updateStudent = (req, res, next)=>{
     let student = new Student(data.nim, data.nama, data.kelas, parseFloat(data.ipk));
     let studentRepo = new StudentRepo(db);
     studentRepo.update(student, result=>{
-        res.redirect('/');
+        res.redirect('/index_login');
     }, err=>{
         next(err);
     });
@@ -65,7 +65,7 @@ let deleteStudent = (req, res, next)=>{
     }
     let studentRepo = new StudentRepo(db);
     studentRepo.delete(nim, result=>{
-        res.redirect('/');
+        res.redirect('/index_login');
     },err =>{
         if(err){
             next(err);

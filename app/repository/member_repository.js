@@ -25,12 +25,15 @@ MemberRepository.prototype = {
             if(err){
                 errCb(err);
             }
-            if(!results){
-                cb('Data Dengan Email'+email+', tidak ditemukan');
-            } else {
-                let m = results[0];
+
+            let m;
+            if(results!=null){
+                m = results[0];
                 let member = new Member(m.id, m.email, m.password, m.full_name);
+                console.log(m.id,m.email,m.password,m.full_name)
                 cb(member);
+            } else {
+                cb('Data Dengan Email tidak ditemukan',null);
             }
         });
     }
