@@ -5,6 +5,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let studentController = require('./app/controllers/student_controllers');
 let memberController = require('./app/controllers/member_controller');
+let bodyParser = require('body-parser');
+
 
 //required for passport
 let ensure = require('connect-ensure-login');
@@ -17,6 +19,7 @@ let app = express();
 
 
 // view engine setup
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
