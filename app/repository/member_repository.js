@@ -27,6 +27,11 @@ MemberRepository.prototype = {
             }
 
             let m;
+            if(results===null){
+                cb(err,null)
+                errCb(err)
+            }
+            console.log("Hasil Query ",results)
             if(results!=null){
                 m = results[0];
                 let member = new Member(m.id, m.email, m.password, m.full_name);

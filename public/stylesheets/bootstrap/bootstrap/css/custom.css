@@ -23,18 +23,16 @@ p {
 }
 
 header {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-    color: #fff;
-    background-image: url('../images/header.jpg');
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  position: relative;
+  width: 100%;
+  background-image: url('../images/header.jpg');
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
+
 
 header .header-content {
     position: relative;
@@ -42,6 +40,25 @@ header .header-content {
     padding: 100px 15px 70px;
     text-align: center;
 }
+header .header-content .login h1 {
+  font-size: 60px;
+  color: antiquewhite;
+}
+header .header-content .login h2 {
+    font-size: 40px;
+    color: antiquewhite;
+  }
+header .header-content .login p {
+  font-size: 5px;
+}
+
+.login_box{
+    background:#f7f7f7;
+    border:3px solid #F4F4F4;
+    padding-left: 15px;
+    margin-bottom:25px;
+    color: #43A6EB
+    }
 
 header .header-content .header-content-inner h1 {
     margin-top: 0;
@@ -154,8 +171,67 @@ header .header-content .header-content-inner p {
 	
 .item-3 {
 	background: url('../images/pencil_sharpener.jpg');
-	}
-		
+    }
+    
+.text-center{
+    color: rgb(255, 255, 255);
+}
+
+.card-container.card {
+    max-width: 350px;
+  background-color: #58361e59;
+}
+
+.login_title{
+    font-family: "myriad-pro",sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    color:rgba(255, 255, 255, 0.44);
+  }
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+  direction: ltr;
+  height: 44px;
+  font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+  width: 100%;
+  display: block;
+
+  z-index: 1;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+  border-color: rgb(104, 145, 162);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+  
+.card {
+    background-color: #FFFFFF;
+    /* just in case there no content*/
+    padding: 1px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 15%x;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+
 .item-1,
 .item-2,
 .item-3 {
@@ -405,6 +481,7 @@ fieldset[disabled] .btn-primary.active {
     color: #fff;
     background: #222;
 }
+
 
 ::selection {
     text-shadow: none;

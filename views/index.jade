@@ -3,11 +3,49 @@ extends layout
   
 block content
 
-  h1= title
-  p 
-  div
-    p Selamat Datang, Silahkan Login
-    p
-    a(href='/login') Klik untuk Login
-    a(href='/signup_form') Klik untuk Signup
-    
+  nav#siteNav.navbar-default.navbar-fixed-top(role="navigaiton")
+    .container
+      .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href="#")
+          span.glyphicon.glyphicon-fire LOGO
+      #navbar.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li.active
+            a(href="#") Home
+          li
+            a(href="#") Product
+          li
+            if profile == null
+              a(href="/login") Login 
+            else
+              a Welcome, #{profile.full_name}
+          li
+            a(href="#") Contact  
+          li
+            if profile !=null
+               a(href="/logout") Logout
+  //- HEADER
+  header
+    .header-content
+      .header-content-inner
+        h1= title
+        p DUMMY UNTUK INDEX
+        a.btn.btn-primary.bnt-lg(href="#") Coba Sekarang
+
+  //- Section
+  section.intro
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          span.glyphicon.glyphicon-apple(style="font-size: 60px")
+          h2.section-heading=title
+          p.text-light=title
+
+
+
+

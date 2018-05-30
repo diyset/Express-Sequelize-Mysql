@@ -44,7 +44,7 @@ let strategy = new LocalStrategy({usernameField:'email', passwordField:'password
     return passport.initialize();
     },
     auth: function(){
-        return passport.authenticate('local', {successRedirect:'/index_login', failureRedirect:'/login', failureFlash:true});
+        return passport.authenticate('local', {successRedirect:'/index', failureRedirect:'/login', failureFlash:true});
     },
     session: function(){
         return passport.session();

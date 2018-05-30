@@ -34,7 +34,8 @@ let signup = (req, res, next)=>{
 
 let index_login = (req, res, next)=>{
     let profile = req.user;
-    res.render('index_login',{'title':'Index Page','profile':profile})
+    console.log(profile)
+    res.render('index',{'title':'Index Page','profile':profile})
 };
 
 let login = (req, res, next)=>{
@@ -43,13 +44,15 @@ let login = (req, res, next)=>{
 
 let myProfile = (req, res, next)=>{
     let profile = req.user;
+    
     res.render('profile',{'title':'My Profile','profile': profile});
  
 };
 
 let logout = (req, res, next)=>{
     req.logout;
-    res.redirect('/login');
+    req.session.destroy();
+    res.redirect('/');
 };
 
 module.exports={

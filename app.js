@@ -36,7 +36,7 @@ app.use(flash());
 
 //START Controller
 app.get('/', memberController.index);
-app.get('/index_login', memberController.index_login);
+app.get('/index', memberController.index_login);
 
 app.get('/signup_form', memberController.signupForm);
 app.post('/signup', memberController.signup);
